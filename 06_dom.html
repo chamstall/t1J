@@ -105,9 +105,16 @@
             } 
 
             // tester la presence d'une  class CSS sur un element HTML
-            if(document.querySelector("li").classList.contains("fondvert")){
+            if(document.querySelector("li:nth-child(2)").classList.contains("fondvert")){
                 console.log("la classe verte est affectée");
             }
+
+             // echangerla presence d'une  class CSS a un element HTML
+            document.querySelector("p").classList.toggle("fondvert");
+
+            // deplacer des elements HTML
+            document.querySelector("p").appendChild(document.querySelector("h1"));
+
         </script>
     </body>
 </html>
