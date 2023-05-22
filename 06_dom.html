@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Dom</title>
+        <style>
+            .citation {
+                font-style: italic;
+                color: rgb(100, 71, 71);
+            }
+            .fondvert {
+                background-color: rgb(50, 139, 95);
+            }
+        </style>
+    </head>
+    <body>
+        <h1 id="title">DOM HTML</h1>
+
+        <p class="test test2">
+            chapitre 1 : Lorem ipsum dolor sit amet
+            <strong>Texte en gras</strong>Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Iure cum quidem tenetur magnam a.
+            <span class="citation">
+                citation 1 : Lorem ipsum dolor sit amet.
+            </span>
+            Lorem ipsum dolor sit amet consectetur.
+        </p>
+
+        <p>
+            chapitre2 : Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Fuga non optio porro natus vel, maxime minus tempore iste nam
+            <span class="citation">
+                citation 2 : Lorem ipsum dolor sit amet.
+            </span>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque
+            sapiente eos sed aperiam provident animi atque.
+        </p>
+
+        <ul>
+            <li>Fraises</li>
+            <li>Pommes</li>
+            <li>Poires</li>
+            <li>Bananes</li>
+            <li>Kiwis</li>
+            <li>Raisin</li>
+        </ul>
+
+        <a href="https://www.google.fr">Cliquez ici</a>
+
+        <!--------------JAVASCRIPT ---------------->
+        <script>
+            console.log("largeur de l'ecran : " + window.innerWidth + "px");
+            console.log("chemin du fichier :" + document.documentURI);
+
+            // selectionner par son ID
+            let title = document.getElementById("title");
+
+            // recuperer uniquement le TEXT
+            console.log(title.innerText);
+            // recuperer uniquement le HTML
+            console.log(title.innerHTML);
+
+            // modifier le contenu TEXT
+            title.innerText = "<em>Nouveau titre</em>";
+            // modifier le contenu HTML
+            title.innerHTML = "<em>Nouveau titre</em>";
+
+            // selectionner par leurs CLASS
+            let citation = document.getElementsByClassName("citation");
+            console.log(citation); //tableau
+            console.log(citation[1]); //tableau à l'index 1
+
+            // selectionner par leurs balises
+            let paragraphe = document.getElementsByTagName("p");
+            console.log(paragraphe[0]); // contenu Text du 1er paragraphe
+
+            // selectionner avec les selecteurs css
+            console.log(document.querySelector("#title"));
+            console.log(document.querySelectorAll(".citation"));
+
+            // recuperer un attribut HTML
+            let a = document.querySelector("a");
+            console.log(a.getAttribute("href"));
+            a.setAttribute("href", "https://www.weformyou.fr");
+
+            // modifier le style css
+            // document.querySelector("p").style.backgroundColor = "#aaa";
+
+            // recuperer la liste de class CSS d'un element HTML
+            console.log(document.querySelector("p").classList);
+
+            // ajouter une  class CSS a un element HTML
+            document.querySelector("p").classList.add("fondvert");
+
+            // supprimer une  class CSS a un element HTML
+            document.querySelector("p").classList.remove("fondvert");
+
+            //selectionner les elements pair
+            let  tabLi = document.querySelectorAll("ul li:nth-child(even)");
+            console.log(tabLi);
+            for(let li of tabLi){
+                li.classList.add("fondvert");
+            } 
+
+            // tester la presence d'une  class CSS sur un element HTML
+            if(document.querySelector("li").classList.contains("fondvert")){
+                console.log("la classe verte est affectée");
+            }
+        </script>
+    </body>
+</html>
