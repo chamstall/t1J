@@ -33,4 +33,4 @@ const message3 = function(texte = "texte par defaut"){
     alert(texte);
 }
 message3();
-message3("je remplace en quelque sorte la valeur par defaut dela var texte");
+message3("ca remplace en quelque sorte la valeur par defaut dela var texte");
