@@ -6,7 +6,7 @@ const message = function() {
 
 message();
 
-// hoisting cela me permet d'appeler la fonction meme quand celle ci n'est pas encore definie
+// hoisting cela me permet d'appeler la fonction meme quand  celle ci n'est pas encore definie
 salutation();
 
 function salutation (){
