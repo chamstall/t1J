@@ -2,6 +2,7 @@ const images = document.querySelectorAll("#galery img");
 
 let imgActive = 0;
 let interval ; // variable globale pour stocker le temps
+
 images[imgActive].classList.add("show");
 
 // masquer les photos sauf la 1ere
@@ -37,7 +38,6 @@ const next = function(){
         imgActive = 0;
     }
     images[imgActive].classList.remove("hidden");
-
     setTimeout(function () {
         images[imgActive].classList.add("show");
     }, 200);
